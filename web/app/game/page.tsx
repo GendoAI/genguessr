@@ -39,19 +39,22 @@ export default function Game() {
 
     setImageResult({ id: "", status: "waiting" });
 
-    const response = await fetch("/api/images/generate", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        prompt: `A photo of a ${subject} in ${location}`,
-      }),
-    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/images/generate`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          prompt: `A photo of a ${subject} in ${location}`,
+        }),
+      }
+    );
 
     let result = await response.json();
 
-    if (response.status !== 200) {
+    if (response.status !== 201) {
       setError(`An error occurred.`);
       return;
     }
@@ -60,7 +63,9 @@ export default function Game() {
 
     while (result.status !== "completed" && result.status !== "failed") {
       await sleep(6000);
-      const response = await fetch("/api/images/result/" + result.id);
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/images/result/` + result.id
+      );
       result = await response.json();
       if (response.status !== 200) {
         setError(`An error occurred.`);
