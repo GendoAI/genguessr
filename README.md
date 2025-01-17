@@ -47,7 +47,7 @@ each with their individual start commands in different terminal windows.
 ## Websockets
 
 The API has been setup to listen to websocket events. These allow asynchronous
-messages to be sent bi-directionally the client and server. A very trivial
+messages to be sent bi-directionally between the client and server. A very trivial
 example of using the websockets has been implemented with a "ping-pong"
 component in the web application. These ping pong events have been left as an
 example of websocket usage and **should be removed** once websockets have been
