@@ -4,32 +4,42 @@ Task instructions can be found [here](https://docs.google.com/document/d/1Sv_0li
 
 ![Screenshot of GenGuessr.](/genguessr.png)
 
-This repository was built using this [template](https://github.com/digitros/nextjs-fastapi).
+This mono-repo consists of two projects: a frontend NextJS application, and a
+supporting API backend that uses the NestJS framework (not to be confused with
+the frontend framework).
+
+Each project has it's own README:
+
+- [Genguessr Web](./web/README.md)
+- [Genguessr API](./api/README.md)
 
 ## Requirements
 
-* Node (developed using v20.8.0)
-* Python (developed using 3.11.6)
-* [pnpm](https://pnpm.io/)
+- Node (developed using v20.8.0)
+- [pnpm](https://pnpm.io/)
 
-## Usage
+## Setup
 
-Create a copy of `.env.example` in the root of the project and rename it to `.env.local`.
+From the project root, run the following:
 
-To install the required dependencies:
+```sh
+# Install node dependencies
+pnpm i
 
-```
-pnpm install
-```
+# Set local environment
+pnpm run configure
 
-To start the application for local dev:
-
-```
-pnpm dev
+# Run both applications in dev mode
+pnpm run dev
 ```
 
-The application will then be available at http://localhost:3000 and the API at http://localhost:8000.
+The web application will then be available at http://localhost:3000 and the API
+at http://localhost:3001.
 
-Swagger docs for the API can be found at: http://localhost:8000/docs
+To keep things simple for the task, `pnpm dev` starts both the Next application
+**and** the Nest API (with hot reloading). You're welcome to add docker to the
+project and run them as two containers, if you'd prefer.
 
-To keep things simple for the task, `pnpm dev` starts both the Next application **and** the Python API (with hot reloading). You're welcome to add docker to the project and run them as two containers, if you'd prefer.
+Because pnpm truncates the output from each application to ~10 lines, when
+debugging its recommended to run the two applications separately by starting
+each with their individual start commands in different terminal windows.

@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "configure": "pnpm run configure:env-vars",
+    "configure:env-vars": "cp web/.env.example web/.env",
     "dev": "pnpm run -r dev",
     "test": "pnpm run -r test"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "typescript": "5.0.4"
-  }
+  "license": "ISC"
 }
