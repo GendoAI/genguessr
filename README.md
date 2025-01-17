@@ -2,7 +2,7 @@
 
 Task instructions can be found [here](https://docs.google.com/document/d/1Sv_0liAbUFcOu9dK0m4UmJfFraB4k9Od4Yt9gnvlTXc/edit?usp=sharing).
 
-![Screenshot of GenGuessr.](/genGuessr.png)
+![Screenshot of GenGuessr](./genGuessr.png)
 
 This mono-repo consists of two projects: a frontend NextJS application, and a
 supporting API backend that uses the NestJS framework (not to be confused with
