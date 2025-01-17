@@ -45,3 +45,19 @@ pnpm run test
 # test coverage
 pnpm run test:cov
 ```
+
+## Nest CLI
+
+Nest provides a CLI tool which is not required but can be helpful to scaffold
+new services and modules. It can be installed using:
+
+```sh
+# Install Nest CLI globally
+pnpm add -g @nestjs/cli
+```
+
+It has it's own documentation [here](https://docs.nestjs.com/cli/overview).
+
+When using it, be sure to run it from within the root of the Nest project as
+opposed to the root of the monorepo. Otherwise Nest will try and create it's own
+monorepo structure.
