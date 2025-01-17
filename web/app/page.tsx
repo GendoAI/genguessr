@@ -1,5 +1,6 @@
 "use client";
 
+import PingPong from "@/components/ping-pong";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -57,6 +58,9 @@ export default function Home() {
             </form>
           </div>
         </div>
+      </div>
+      <div className="flex flex-col text-md lg:text-xl gap-y-2">
+        <PingPong />
       </div>
     </div>
   );
